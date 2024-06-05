@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../../YelpCamp"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Project",
+		"git.ignoreLimitWarning": true
+	}
+}
