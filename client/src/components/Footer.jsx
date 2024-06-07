@@ -72,7 +72,7 @@ export default function FooterCom() {
                     <Footer.Icon href='#' icon={BsInstagram}/>
                     <Footer.Icon href='#' icon={BsTwitter}/>
                     <Footer.Icon href='https://www.github.com/ChandraSekhar-1306' target='_blank' icon={BsGithub}/>
-                    <Footer.Icon href='https://discord.gg/bQF5kncv' icon={BsDiscord}/>
+                    <Footer.Icon href='https://discord.gg/bQF5kncv' target='_blank' icon={BsDiscord}/>
 
                 </div>
             </div>
