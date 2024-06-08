@@ -41,9 +41,9 @@ export default function Signup() {
       });
       const data = await res.json();
       if(data.success === false){
+        setLoading(false);
         return setErrorMessage('username or email already exists.');
       }
-      setLoading(false);
       if(res.ok){
         navigate('/sign-in')
         
