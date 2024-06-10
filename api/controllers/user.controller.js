@@ -29,6 +29,7 @@ export const updateUser = async(req , res , next)=>{
     if(!req.body.username.match(/^[a-zA-Z0-9]+$/)){
         return next(errorHandler(400 , 'Username can contain only letters and numbers'))
     }
+}
     try{
         const updatedUser = await User.findByIdAndUpdate(req.params.userId , {
             $set:{
@@ -43,5 +44,18 @@ export const updateUser = async(req , res , next)=>{
     }catch(error){
         next(error)
     }
- }
+ 
+}
+
+export const deleteUser = async(req , res , next)=>{
+    if(req.user.id !== req.params.userId){
+        return next(errorHandler(403 , 'You are not allowed to delete this account'))
+
+    }
+    try {
+        await User.findByIdAndDelete(req.params.userId)
+        res.status(200).json('User has been deleted')
+    } catch (error) {
+        next(error)
+    }
 }
