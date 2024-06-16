@@ -17,7 +17,7 @@ export default function CreatePost() {
                     <option value='nextjs'>Next.js</option>
                 </Select>
             </div>
-            <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-4 my-4">
+            <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3 my-2">
                 <FileInput type='file' accept='image/*'/>
                 <Button type='button' gradientDuoTone='purpleToBlue' size='sm' outline>Upload Image</Button>
             </div>
