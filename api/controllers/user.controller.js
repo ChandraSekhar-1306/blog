@@ -48,7 +48,7 @@ export const updateUser = async(req , res , next)=>{
 }
 
 export const deleteUser = async(req , res , next)=>{
-    if(req.user.id !== req.params.userId){
+    if(!req.user.isAdmin && req.user.id !== req.params.userId){
         return next(errorHandler(403 , 'You are not allowed to delete this account'))
 
     }
@@ -74,7 +74,7 @@ export const getUsers = async(req , res , next)=>{
     }
     try {
         const startIndex = parseInt(req.query.startIndex) || 0;
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = parseInt(req.query.limit) || 9;
         const sortDirection = req.query.sort ==='asc' ?1:-1;
         const users = await User.find()
         .sort({createdAt:sortDirection})
